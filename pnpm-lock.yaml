@@ -4,21 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  astro@<5.14.3: '>=5.14.3'
-  astro@<5.15.8: '>=5.15.8'
-  astro@<5.15.9: '>=5.15.9'
-  astro@<=5.15.6: '>=5.15.8'
-  astro@>=2.16.0 <5.15.5: '>=5.15.5'
-  astro@>=5.13.4 <5.13.10: '>=5.13.10'
-  astro@>=5.2.0 <5.15.6: '>=5.15.6'
-  axios@>=1.0.0 <1.12.0: '>=1.12.0'
-  js-yaml@>=4.0.0 <4.1.1: '>=4.1.1'
-  mdast-util-to-hast@>=13.0.0 <13.2.1: '>=13.2.1'
-  qs@<6.14.1: '>=6.14.1'
-  vite@>=6.0.0 <=6.3.5: '>=6.3.6'
-  vite@>=6.0.0 <=6.4.0: '>=6.4.1'
-
 importers:
 
   .:
@@ -36,7 +21,7 @@ importers:
         specifier: ^4.1.12
         version: 4.1.12(vite@6.4.1(@types/node@24.3.1)(jiti@2.5.1)(lightningcss@1.30.1)(sass-embedded@1.93.1)(sass@1.93.1)(yaml@2.8.1))
       astro:
-        specifier: '>=5.15.6'
+        specifier: ^5.13.5
         version: 5.16.8(@types/node@24.3.1)(jiti@2.5.1)(lightningcss@1.30.1)(rollup@4.50.0)(sass-embedded@1.93.1)(sass@1.93.1)(typescript@5.9.2)(yaml@2.8.1)
       astro-icon:
         specifier: ^1.1.5
@@ -1093,7 +1078,7 @@ packages:
   '@tailwindcss/vite@4.1.12':
     resolution: {integrity: sha512-4pt0AMFDx7gzIrAOIYgYP0KCBuKWqyW8ayrdiLEjoJTT4pKTjrzG/e4uzWtTLDziC+66R9wbUqZBccJalSE5vQ==}
     peerDependencies:
-      vite: '>=6.4.1'
+      vite: ^5.2.0 || ^6 || ^7
 
   '@trysound/sax@0.2.0':
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
@@ -2630,9 +2615,6 @@ packages:
   unist-util-visit-children@3.0.0:
     resolution: {integrity: sha512-RgmdTfSBOg04sdPcpTSD1jzoNBjt9a80/ZCzp5cI9n1qPzLZWF9YdvWGN2zmTumP1HWhXKdUWexjy/Wy/lJ7tA==}
 
-  unist-util-visit-parents@6.0.1:
-    resolution: {integrity: sha512-L/PqWzfTP9lzzEa6CKs0k2nARxTdZduw3zyh8d2NVBnsyvHjSX4TWse388YrrQKbvI8w20fGjGlhgT96WwKykw==}
-
   unist-util-visit-parents@6.0.2:
     resolution: {integrity: sha512-goh1s1TBrqSqukSc8wrjwWhL0hiJxgA8m4kFxGlQ+8FYQ3C/m11FcTs4YYem7V664AhHVvgoQLk890Ssdsr2IQ==}
 
@@ -2756,7 +2738,7 @@ packages:
   vitefu@1.1.1:
     resolution: {integrity: sha512-B/Fegf3i8zh0yFbpzZ21amWzHmuNlLlmJT6n7bu5e+pCHUKQIfXSYokrqOBGEMMe9UG2sostKQF9mml/vYaWJQ==}
     peerDependencies:
-      vite: '>=6.4.1'
+      vite: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0-beta.0
     peerDependenciesMeta:
       vite:
         optional: true
@@ -5641,11 +5623,6 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.3
 
-  unist-util-visit-parents@6.0.1:
-    dependencies:
-      '@types/unist': 3.0.3
-      unist-util-is: 6.0.0
-
   unist-util-visit-parents@6.0.2:
     dependencies:
       '@types/unist': 3.0.3
@@ -5655,7 +5632,7 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.3
       unist-util-is: 6.0.0
-      unist-util-visit-parents: 6.0.1
+      unist-util-visit-parents: 6.0.2
 
   unstorage@1.17.3:
     dependencies:
