@@ -1,0 +1,108 @@
+---
+import Wordmark from "../assets/banner.svg";
+import { Icon } from "astro-icon/components";
+const currentPath = Astro.url.pathname;
+
+const links: any[] = [
+  // { name: "Home", href: "/", icon: false },
+  // { name: "About", href: "/about", icon: false },
+  // { name: "Events", href: "/#events", icon: false },
+  // { name: "Photos", href: "/photos/", icon: false },
+];
+
+const socials = [
+  {
+    icon: "simple-icons:facebook",
+    href: "https://www.facebook.com/profile.php?id=61584661677904",
+  },
+];
+
+const donateLink = "https://secure.actblue.com/donate/liamanock17"
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 text-white">
+  <div class="max-w-5xl mx-auto sm:px-16 px-3 py-2 flex items-center gap-2">
+    <a href="/" class="hover:text-primary transition">
+      <Wordmark height={48} width={190} />
+    </a>
+    <div class="grow"></div>
+    <nav>
+      <ul class="flex items-center gap-6 flex-wrap">
+        {
+          links.map((link) => {
+            const isActive = currentPath === link.href;
+            return (
+              <li>
+                <a
+                  href={link.href}
+                  class={`${
+                    isActive ? "text-primary font-semibold" : ""
+                  } hover:text-primary transition-colors duration-200`}
+                >
+                  {link.name}
+                </a>
+              </li>
+            );
+          })
+        }
+        <li>
+          <a
+            href={donateLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-primary text-black px-4 py-2 rounded-md font-semibold hover:bg-primary/80 transition-colors duration-200"
+          >
+            Donate
+          </a>
+        </li>
+        <ul class="flex gap-4">
+          {
+            socials.map((social) => (
+              <li>
+                <a
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-accent hover:text-primary transition-colors duration-200"
+                >
+                  <Icon name={social.icon} width="24" height="24" />
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  header {
+    transition:
+      background-color 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+  header.scrolled {
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+  }
+</style>
+
+<script>
+  function scrollHeader() {
+    const header = document.querySelector("header");
+    if (header) {
+      if (window.scrollY > 0) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    }
+  }
+  document.addEventListener("scroll", scrollHeader);
+
+  document.addEventListener("astro:page-load", () => {
+    scrollHeader();
+  });
+</script>

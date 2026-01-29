@@ -1,0 +1,236 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import headshot from "../assets/headshot.jpg";
+---
+
+<main class="bg-background">
+  <section
+    class="relative min-h-screen flex items-center pt-20 overflow-hidden"
+  >
+    <div class="absolute inset-0 bg-background"></div>
+    <div class="absolute inset-0 hero-map-overlay pointer-events-none"></div>
+    <div
+      class="absolute top-1/4 -left-20 w-96 h-96 bg-secondary rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-pulse"
+    >
+    </div>
+    <div
+      class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary rounded-full mix-blend-overlay filter blur-[100px] opacity-20"
+    >
+    </div>
+    <div
+      class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid lg:grid-cols-12 gap-12 items-center"
+    >
+      <div class="lg:col-span-7 space-y-8 relative">
+        <div
+          class="inline-block bg-secondary border-2 border-primary text-primary px-6 py-2 font-display font-black uppercase tracking-widest transform -rotate-2 shadow-[4px_4px_0px_0px_rgba(236,171,58,0.5)]"
+        >
+          Vote April 7
+        </div>
+        <h1
+          class="text-6xl sm:text-7xl md:text-8xl font-display font-black leading-[0.85] tracking-tighter"
+        >
+          <span class="block text-white">READY</span>
+          <span class="block text-primary ml-8 sm:ml-16">TO LEAD</span>
+          <span
+            class="block text-transparent text-outline-primary opacity-50 ml-4 sm:ml-8"
+            >DISTRICT 17</span
+          >
+        </h1>
+        <p
+          class="text-xl md:text-2xl text-white/90 font-light max-w-lg border-l-4 border-primary pl-6 py-2"
+        >
+          Bringing <span class="font-bold text-primary">new energy</span>,
+          accessible transit, and real housing solutions to La Crosse County.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-6 pt-4">
+          <a
+            class="group relative inline-flex justify-center items-center gap-2 bg-primary text-background font-display font-black text-lg px-8 py-4 uppercase tracking-wider overflow-hidden"
+            href="#join"
+          >
+            <span class="relative z-10 flex items-center gap-2"
+              >Join The Campaign <Icon name="lucide:arrow-right" class="font-bold" /></span
+            >
+            <div
+              class="absolute inset-0 bg-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out"
+            >
+            </div>
+          </a>
+        </div>
+      </div>
+      <div
+        class="lg:col-span-5 relative mt-12 lg:mt-0 flex justify-center lg:justify-end"
+      >
+        <div class="relative w-72 sm:w-[420px] aspect-3/4">
+          <div
+            class="absolute top-4 -right-4 w-full h-full border-4 border-primary bg-transparent z-0"
+          >
+          </div>
+          <div class="absolute -top-4 -left-4 w-full h-full bg-secondary z-0">
+          </div>
+          <div
+            class="absolute inset-0 overflow-hidden bg-gray-300 z-10 transition-all duration-500 shadow-2xl"
+          >
+            <Image
+              src={headshot}
+              alt="Lia Manock smiling"
+              class="object-cover w-full h-full"
+            />
+          </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-16 bg-background relative" id="issues">
+    <div
+      class="absolute top-0 left-1/2 w-24 h-1 bg-primary rounded-full -translate-x-1/2 hidden md:block"
+    >
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div
+        class="mb-16 text-center"
+      >
+        <h2
+          class="text-5xl md:text-7xl font-display font-black text-white uppercase tracking-tighter leading-none"
+        >
+          Our <span
+            class="text-transparent text-outline-primary block md:inline"
+            >Priorities</span
+          >
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="group relative">
+          <div
+            class="absolute inset-0 bg-primary transform translate-x-2 translate-y-2 transition-transform group-hover:translate-x-4 group-hover:translate-y-4"
+          >
+          </div>
+          <div
+            class="relative bg-secondary h-full p-8 border-2 border-white/10 group-hover:border-primary transition-colors"
+          >
+            <div class="mb-6">
+              <Icon name="lucide:bus" class="text-primary text-5xl" />
+            </div>
+            <h3
+              class="text-2xl font-display font-black text-white uppercase mb-4 leading-none"
+            >
+              Transportation<br />That Works
+            </h3>
+            <p class="text-gray-200 leading-relaxed font-light">
+              Prioritizing accessible, reliable transit for District 17 to
+              ensure everyone can get to work, school, and essential services.
+            </p>
+          </div>
+        </div>
+        <div class="group relative mt-8 md:mt-0">
+          <div
+            class="absolute inset-0 bg-primary transform translate-x-2 translate-y-2 transition-transform group-hover:translate-x-4 group-hover:translate-y-4"
+          >
+          </div>
+          <div
+            class="relative bg-secondary h-full p-8 border-2 border-white/10 group-hover:border-primary transition-colors"
+          >
+            <div class="mb-6">
+              <Icon name="lucide:home" class="text-primary text-5xl" />
+            </div>
+            <h3
+              class="text-2xl font-display font-black text-white uppercase mb-4 leading-none"
+            >
+              Fair Housing<br />For All
+            </h3>
+            <p class="text-gray-200 leading-relaxed font-light">
+              Fighting to protect renters and first-time home buyers. We need
+              affordable options for working families.
+            </p>
+          </div>
+        </div>
+        <div class="group relative mt-8 md:mt-0">
+          <div
+            class="absolute inset-0 bg-primary transform translate-x-2 translate-y-2 transition-transform group-hover:translate-x-4 group-hover:translate-y-4"
+          >
+          </div>
+          <div
+            class="relative bg-secondary h-full p-8 border-2 border-white/10 group-hover:border-primary transition-colors"
+          >
+            <div class="mb-6">
+              <Icon name="lucide:user" class="text-primary text-5xl" />
+            </div>
+            <h3
+              class="text-2xl font-display font-black text-white uppercase mb-4 leading-none"
+            >
+              Dignity for<br />Older Adults
+            </h3>
+            <p class="text-gray-200 leading-relaxed font-light">
+              Supporting aging in place with enhanced healthcare access and home
+              accessibility modifications.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-20 relative overflow-hidden" id="join">
+    <div
+      class="absolute inset-0 bg-secondary transform -skew-y-3 origin-top-left z-0 scale-110"
+    >
+    </div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div
+        class="bg-primary p-8 md:p-12 shadow-[12px_12px_0px_0px_rgba(32,59,113,0.5)] border-4 border-background"
+      >
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2
+              class="text-4xl md:text-6xl font-display font-black text-background uppercase mb-4 leading-none"
+            >
+              Join The<br />Movement
+            </h2>
+            <p class="text-background font-bold text-lg mb-0">
+              Stay updated on campaign events, volunteer opportunities, and
+              news. Let's build a better county together.
+            </p>
+          </div>
+          <form class="space-y-4">
+            <div>
+              <label class="sr-only" for="name">Full Name</label>
+              <input
+                class="w-full bg-white/20 border-2 border-background text-background placeholder-background/70 px-4 py-3 font-bold focus:ring-0 focus:bg-white focus:border-background transition-colors"
+                id="name"
+                name="name"
+                placeholder="FULL NAME"
+                type="text"
+              />
+            </div>
+            <div>
+              <label class="sr-only" for="email">Email Address</label>
+              <input
+                class="w-full bg-white/20 border-2 border-background text-background placeholder-background/70 px-4 py-3 font-bold focus:ring-0 focus:bg-white focus:border-background transition-colors"
+                id="email"
+                name="email"
+                placeholder="EMAIL ADDRESS"
+                type="email"
+              />
+            </div>
+            <button
+              class="w-full bg-background hover:bg-secondary text-white font-display font-black uppercase tracking-widest px-8 py-4 shadow-lg transition-all"
+              type="button"
+            >
+              Count Me In
+            </button>
+            <p class="text-background/60 text-xs font-bold text-center">
+              We respect your privacy. Unsubscribe at any time.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<style>
+  .text-outline-primary {
+    -webkit-text-stroke: 1px var(--color-primary);
+  }
+  .font-black {
+    letter-spacing: 0.1rem;
+  }
+</style>

@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-prompt), Avenir, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: var(--font-britannic), Georgia, "Times New Roman", serif;
+  --color-background: #203b71;
+  --color-secondary: #164895;
+  --color-primary: #ecab3a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
