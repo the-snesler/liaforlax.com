@@ -4,8 +4,10 @@
   "compatibility_date": "2025-05-24",
   "compatibility_flags": ["nodejs_compat"],
   "assets": {
+    "binding": "ASSETS",
     "directory": "./dist"
   },
+  "main": "dist/_worker.js/index.js",
   "observability": {
     "enabled": true
   },

@@ -189,7 +189,7 @@ import headshot from "../assets/headshot.jpg";
               news. Let's build a better county together.
             </p>
           </div>
-          <form class="space-y-4">
+          <form id="signup-form" class="space-y-4">
             <div>
               <label class="sr-only" for="name">Full Name</label>
               <input
@@ -208,18 +208,62 @@ import headshot from "../assets/headshot.jpg";
                 name="email"
                 placeholder="EMAIL ADDRESS"
                 type="email"
+                required
               />
             </div>
+            <div id="form-status" class="hidden text-center font-bold py-2"></div>
             <button
-              class="w-full bg-background hover:bg-secondary text-white font-display font-black uppercase tracking-widest px-8 py-4 shadow-lg transition-all"
-              type="button"
+              class="w-full bg-background hover:bg-secondary text-white font-display font-black uppercase tracking-widest px-8 py-4 shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              type="submit"
+              id="submit-btn"
             >
-              Count Me In
+              <span id="btn-text">Count Me In</span>
+              <span id="btn-loading" class="hidden">Joining...</span>
             </button>
             <p class="text-background/60 text-xs font-bold text-center">
               We respect your privacy. Unsubscribe at any time.
             </p>
           </form>
+
+          <script>
+            import { actions } from 'astro:actions';
+
+            const form = document.getElementById("signup-form") as HTMLFormElement;
+            const status = document.getElementById("form-status")!;
+            const submitBtn = document.getElementById("submit-btn") as HTMLButtonElement;
+            const btnText = document.getElementById("btn-text")!;
+            const btnLoading = document.getElementById("btn-loading")!;
+
+            form.addEventListener("submit", async (e) => {
+              e.preventDefault();
+
+              submitBtn.disabled = true;
+              btnText.classList.add("hidden");
+              btnLoading.classList.remove("hidden");
+              status.classList.add("hidden");
+
+              const formData = new FormData(form);
+              const data = {
+                name: formData.get("name") as string,
+                email: formData.get("email") as string,
+              };
+
+              try {
+                await actions.subscribe.orThrow(data);
+                status.textContent = "You're in! We'll be in touch soon.";
+                status.className = "text-center font-bold py-2 text-background";
+                form.reset();
+              } catch (error) {
+                status.textContent = error instanceof Error ? error.message : "Please try again later.";
+                status.className = "text-center font-bold py-2 text-red-800";
+              } finally {
+                submitBtn.disabled = false;
+                btnText.classList.remove("hidden");
+                btnLoading.classList.add("hidden");
+                status.classList.remove("hidden");
+              }
+            });
+          </script>
         </div>
       </div>
     </div>
@@ -228,7 +272,7 @@ import headshot from "../assets/headshot.jpg";
 
 <style>
   .text-outline-primary {
-    -webkit-text-stroke: 1px var(--color-primary);
+    -webkit-text-stroke: 2.5px var(--color-primary);
   }
   .font-black {
     letter-spacing: 0.1rem;
