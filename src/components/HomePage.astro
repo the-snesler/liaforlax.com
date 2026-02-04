@@ -81,6 +81,27 @@ import PriorityCard from "./PriorityCard.astro";
       </div>
     </div>
   </section>
+  <section class="py-20 bg-background relative" id="about">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-16 text-center">
+        <h2
+          class="text-5xl md:text-7xl font-display font-black text-white uppercase tracking-tighter leading-none"
+        >
+          About <span
+            class="text-transparent text-outline-primary block md:inline"
+            >Lia</span
+          >
+        </h2>
+      </div>
+      <div class="max-w-3xl mx-auto">
+        <p
+          class="text-lg md:text-xl text-white/90 font-light leading-relaxed border-l-4 border-primary pl-6"
+        >
+          As a lifelong La Crosse County resident, daughter of local business owners, and student at Western Technical College I am deeply connected to this community and passionate about the role local governance can play in bettering our county for all residents. My passion for helping others is the driving force behind everything that I do and why I'm running for La Crosse County Board. I am currently sitting on the YWCA Board of Directors, filming a documentary about local housing issues, and pursuing a career in social work. I will carry all these experiences with me if elected to La Crosse County Board and focus on the services our county can provide above all else.
+        </p>
+      </div>
+    </div>
+  </section>
   <section class="py-16 bg-background relative" id="issues">
     <div
       class="absolute top-0 left-1/2 w-24 h-1 bg-primary rounded-full -translate-x-1/2 hidden md:block"
@@ -120,7 +141,19 @@ import PriorityCard from "./PriorityCard.astro";
         <PriorityCard
           icon="lucide:shield-check"
           title="Safety for Our Community"
-          description="Preventing any and all collaboration with ICE to ensure public trust in county law enforcement and the continued safety of all residents."
+          description="Preventing all county collaboration with ICE to ensure public trust in county law enforcement and the continued safety of all residents."
+          class="mt-8 md:mt-0 lg:mt-0"
+        />
+        <PriorityCard
+          icon="lucide:sun"
+          title="Affordable Clean Energy"
+          description="Preparing La Crosse County for the future through long term sustainability efforts to reduce utility costs for the county and its residents."
+          class="mt-8 md:mt-0 lg:mt-0"
+        />
+        <PriorityCard
+          icon="lucide:store"
+          title="Support for Small Businesses"
+          description="Supporting small businesses, especially those just starting out, by providing public grants and other resources so that more of our money stays within our community."
           class="mt-8 md:mt-0 lg:mt-0"
         />
       </div>
@@ -234,5 +267,8 @@ import PriorityCard from "./PriorityCard.astro";
   }
   .font-black {
     letter-spacing: 0.1rem;
+  }
+  section[id] {
+    scroll-margin-top: 6rem;
   }
 </style>
