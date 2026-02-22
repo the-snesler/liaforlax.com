@@ -1,0 +1,34 @@
+---
+interface Props {
+	href: string;
+	logoSrc: string;
+	alt: string;
+	label: string;
+}
+
+const { href, logoSrc, alt, label } = Astro.props as Props;
+---
+
+<a
+	href={href}
+	target="_blank"
+	rel="noopener noreferrer"
+	class="group relative p-6 bg-white/70 border-2 border-white/40 hover:border-primary hover:bg-primary/90 transition-all duration-300 rounded-lg shadow"
+>
+	<div
+		class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg"
+	>
+	</div>
+	<div class="relative">
+		<img
+			src={logoSrc}
+			alt={alt}
+			class="h-16 md:h-20 w-auto object-contain transition-all duration-300"
+		/>
+	</div>
+	<span
+		class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-xs text-white/50 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap"
+	>
+		{label}
+	</span>
+</a>
