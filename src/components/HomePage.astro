@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import headshot from "../assets/headshot.jpg";
+import EndorsementCard from "./EndorsementCard.astro";
 import PriorityCard from "./PriorityCard.astro";
 ---
 
@@ -78,10 +79,11 @@ import PriorityCard from "./PriorityCard.astro";
               class="object-cover w-full h-full"
             />
           </div>
+        </div>
       </div>
     </div>
   </section>
-  <section class="py-20 bg-background relative" id="about">
+  <section class="py-20 bg-secondary relative" id="about">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="mb-16 text-center">
         <h2
@@ -103,10 +105,6 @@ import PriorityCard from "./PriorityCard.astro";
     </div>
   </section>
   <section class="py-16 bg-background relative" id="issues">
-    <div
-      class="absolute top-0 left-1/2 w-24 h-1 bg-primary rounded-full -translate-x-1/2 hidden md:block"
-    >
-    </div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div
         class="mb-16 text-center"
@@ -155,6 +153,33 @@ import PriorityCard from "./PriorityCard.astro";
           title="Support for Small Businesses"
           description="Supporting small businesses, especially those just starting out, by providing public grants and other resources so that more of our money stays within our community."
           class="mt-8 md:mt-0 lg:mt-0"
+        />
+      </div>
+    </div>
+  </section>
+  <section class="py-20 bg-background relative" id="endorsements">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-16 text-center">
+        <h2
+          class="text-5xl md:text-7xl font-display font-black text-white uppercase tracking-tighter leading-none"
+        >
+          <span class="text-transparent text-outline-primary block md:inline"
+            >Endorsed</span
+          > By
+        </h2>
+      </div>
+      <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+        <EndorsementCard
+          href="https://www.laxdems.com/"
+          logoSrc="/lax-dems-logo.png"
+          alt="LAX Dems - La Crosse County Democratic Party"
+          label="LAX Dems"
+        />
+        <EndorsementCard
+          href="https://www.wisconsinprogress.org/"
+          logoSrc="/wisconsin-progress-logo.png"
+          alt="Wisconsin Progress"
+          label="Wisconsin Progress"
         />
       </div>
     </div>
